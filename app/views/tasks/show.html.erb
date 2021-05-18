@@ -1,4 +1,11 @@
-<h1><%= @task.title %></h1>
-<p><%= @task.details %></p>
-<p><%= link_to "Edit task", edit_task_path %></p>
-<p><%= link_to "Back to list", tasks_path %></p>
+<div class="card p-3">
+  <h1>
+    <%= @task.title %>
+  <% if @task.completed %>
+  <i class="fas fa-check text-success"></i>
+  <% end %>
+  </h1>
+  <p><%= @task.details %></p>
+  <p><%= link_to "Edit task", edit_task_path, class: 'btn btn-info'%>
+  <%= link_to "Back to list", tasks_path, class: 'btn btn-outline-info'%></p>
+</div>
